@@ -1,0 +1,16 @@
+package emprestimo;
+
+public class Teste extends Moeda {
+
+	public Teste(String valor) {
+		super(valor);
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+	 
+		Moeda salario = new Moeda("100.00");
+		System.out.println(salario.valorFormatado());
+	}
+
+}

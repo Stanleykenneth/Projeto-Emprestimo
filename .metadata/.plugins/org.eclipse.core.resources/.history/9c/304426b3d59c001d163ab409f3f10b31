@@ -1,0 +1,18 @@
+package emprestimo;
+
+public class Teste extends Moeda {
+
+	public Teste(String valor) {
+		super(valor);
+		
+	}
+
+	public static void main(String[] args) {
+	 
+		Moeda salario = new Moeda("100.00");
+		salario.subtrair("50.00");
+		System.out.println(salario.valorFormatado());
+		
+	}
+
+}
