@@ -96,8 +96,6 @@ public class Calcula extends Moeda {
 				salario = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite o valor do seu salário:"));
 				JOptionPane.showMessageDialog(null, "Seu salário é: " + salario);
 				
-				
-				
 				break;
 
 			case 5:

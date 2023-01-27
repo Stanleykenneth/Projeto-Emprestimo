@@ -20,7 +20,7 @@ public class Calcula extends Moeda {
 		double salario;
 		double emprestimo = 0;
 		int parcelas = -1;
-		double valorParcela;		
+		double valorParcela;
 		int opcao = -1;
 
 		salario = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite o valor do seu salário:"));
@@ -63,19 +63,8 @@ public class Calcula extends Moeda {
 				break;
 
 			case 2:				
-				emprestimo = Double.parseDouble(JOptionPane.showInputDialog("Didigte o valor desejado"));
-				JOptionPane.showInternalMessageDialog(null, "Valor sugerido foi: " + emprestimo);
-				parcelas = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite em quantas parcelas pretende pagar:"));
-				JOptionPane.showMessageDialog(null, "Qantidade de parcela solicida foi: " + parcelas);
-				if (parcelas <= 6) {
-
-					valorParcela = emprestimo / parcelas;
-					JOptionPane.showMessageDialog(null, "O valor da percela a ser pago é de R$" + valorParcela + " em "
-							+ parcelas + " vezes sem juros!");
-				}else if(parcelas >6) {
-					JOptionPane.showMessageDialog(null, "Volte ao menu e solicite a opção de número [3]");
+				
 					
-				}				
 				break;
 
 			case 3:
@@ -83,21 +72,16 @@ public class Calcula extends Moeda {
 				emprestimo = Double.parseDouble(JOptionPane.showInputDialog(null, "Por favor repita seu interesse de emprestimo:"));
 				JOptionPane.showInternalMessageDialog(null, "Valor sugerido foi: " + emprestimo);
 				parcelas = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite em quantas parcelas pretende pagar:"));
-				JOptionPane.showMessageDialog(null, "Qantidade de parcela solicida foi: " + parcelas + " vezes.");
-				if (parcelas >= 7) {
+				JOptionPane.showMessageDialog(null, "Qantidade de parcela solicida foi: " + parcelas);
+				if (parcelas >=7) {
 					
-					valorParcela = ((emprestimo * 0.2) + emprestimo )/ parcelas;					
-					JOptionPane.showMessageDialog(null, "O valor da percela a ser pago é de R$" + valorParcela + " em "	+ parcelas);
-				}				
+					valorParcela = (emprestimo * 0.02) / parcelas;					
+				}			
+				
 				break;
 
 			case 4:
-				
-				salario = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite o valor do seu salário:"));
-				JOptionPane.showMessageDialog(null, "Seu salário é: " + salario);
-				
-				
-				
+				/*Confirmar Emprestimo*/
 				break;
 
 			case 5:
