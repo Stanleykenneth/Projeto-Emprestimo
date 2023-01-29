@@ -13,7 +13,6 @@ public class Calcula {
 		double valorParcela;
 		int opcao = -1;
 
-		
 		salario = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite o valor do seu salário:"));
 		JOptionPane.showMessageDialog(null, "Seu salário é: " + NumberFormat.getCurrencyInstance().format(salario));
 
@@ -172,6 +171,8 @@ public class Calcula {
 							+ NumberFormat.getCurrencyInstance().format(valorParcela) + " em " + parcelas);
 
 					if (valorParcela >= (salario * 0.2)) {
+						JOptionPane.showMessageDialog(null, "Emprestimo concedido");
+					} else {
 						JOptionPane.showMessageDialog(null, "A prestação excede o valor de 20% do seu salário"
 								+ "\n Selecione a opção com mais prestação!");
 						parcelas = Integer.parseInt(
@@ -179,8 +180,6 @@ public class Calcula {
 						JOptionPane.showMessageDialog(null,
 								" Qantidade de parcela solicida foi: " + parcelas + " vezes.");
 
-					} else {						
-						JOptionPane.showMessageDialog(null, "Emprestimo não liberado");	
 					}
 				}
 				break;
@@ -231,7 +230,7 @@ public class Calcula {
 
 				} else if (parcelas >= 11 & parcelas <= 24) {
 					valorParcela = emprestimo / parcelas;
-					valorParcela = (((emprestimo * 0.6) + emprestimo) / parcelas);
+					valorParcela = (((emprestimo * 0.2) + emprestimo) / parcelas);
 					JOptionPane.showMessageDialog(null,
 							" O valor da percela a ser pago é de "
 									+ NumberFormat.getCurrencyInstance().format(valorParcela) + " em " + parcelas
