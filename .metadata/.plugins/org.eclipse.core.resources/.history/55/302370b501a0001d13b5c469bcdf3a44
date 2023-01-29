@@ -183,7 +183,7 @@ public class Calcula {
 				} else if (parcelas >= 7 & parcelas <= 10) {
 
 					valorParcela = emprestimo / parcelas;
-					valorParcela = (((emprestimo * 0.2) + emprestimo) / parcelas);
+					valorParcela = (((emprestimo * 0.2) + emprestimo) / parcelas) * 0.2;
 					JOptionPane.showMessageDialog(null,
 							"O valor da percela a ser pago é de " + NumberFormat.getCurrencyInstance().format(valorParcela) + " em " + parcelas + " Parcelas.");
 					if (valorParcela < ((salario * 0.2) / salario)) {
@@ -195,15 +195,15 @@ public class Calcula {
 					}
 
 				} else if (parcelas >= 11 & parcelas <= 24) {
+
 					valorParcela = emprestimo / parcelas;
-					valorParcela = (((emprestimo * 0.2) + emprestimo) / parcelas);
+					valorParcela = (((emprestimo * 0.2) + emprestimo) / parcelas) * 0.2;
 					JOptionPane.showMessageDialog(null,
 							"O valor da percela a ser pago é de " + NumberFormat.getCurrencyInstance().format(valorParcela) + " em " + parcelas);
 					if (valorParcela < ((salario * 0.2) / salario)) {
 						JOptionPane.showMessageDialog(null, "O valor da percela a ser pago é de " + NumberFormat.getCurrencyInstance().format(valorParcela)
 								+ " em " + parcelas + " vezes sem juros!");
 						JOptionPane.showMessageDialog(null, "Empréstimo Liberado!");
-						
 					} else {
 						JOptionPane.showMessageDialog(null, "Empréstimo não Liberado!");
 					}

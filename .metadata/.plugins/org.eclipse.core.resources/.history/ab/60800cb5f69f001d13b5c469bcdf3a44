@@ -1,0 +1,6 @@
+package calcula.emprestimo;
+
+public interface FORMATO {
+
+	public String valorFormatado();
+}

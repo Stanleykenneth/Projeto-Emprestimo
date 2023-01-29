@@ -1,5 +1,7 @@
 package calcula.emprestimo;
-
+/*Leia um salário de um trabalhador e o valor da pretação de um empréstimo.
+Se prestação for maior que 20% do salário: Empréstiomo não concedido concedido.
+Caso contrário imprima: Empréstimo concedido. */
 
 import javax.swing.JOptionPane;
 import java.text.NumberFormat;
@@ -8,7 +10,8 @@ import java.text.NumberFormat;
 public class Calcula {	
 	
 
-	public static void main(String[] args) {		
+	public static void main(String[] args) {
+		
 		
 
 	    double salario;
@@ -133,7 +136,7 @@ public class Calcula {
 							valorParcela = ((emprestimo * 0.2) + emprestimo) / parcelas;
 							JOptionPane.showMessageDialog(null,	" O valor da percela a ser pago é de " + NumberFormat.getCurrencyInstance().format(valorParcela) + " em " + parcelas);
 									
-								if (valorParcela <= (salario * 0.2)) {
+								if (valorParcela >= (salario * 0.2)) {
 									JOptionPane.showMessageDialog(null, " A prestação excede o valor de 20% do seu salário"
 										                              + " \n Selecione a opção com mais prestação!");
 									parcelas = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite em quantas parcelas pretende pagar:"));
@@ -183,27 +186,27 @@ public class Calcula {
 				} else if (parcelas >= 7 & parcelas <= 10) {
 
 					valorParcela = emprestimo / parcelas;
-					valorParcela = (((emprestimo * 0.2) + emprestimo) / parcelas);
-					JOptionPane.showMessageDialog(null,
-							"O valor da percela a ser pago é de " + NumberFormat.getCurrencyInstance().format(valorParcela) + " em " + parcelas + " Parcelas.");
-					if (valorParcela < ((salario * 0.2) / salario)) {
-						JOptionPane.showMessageDialog(null, "O valor da percela a ser pago é de " + NumberFormat.getCurrencyInstance().format(valorParcela)
-								+ " em " + parcelas + " Parcelas!");
-						JOptionPane.showMessageDialog(null, "Empréstimo Liberado!");
-					} else {
-						JOptionPane.showMessageDialog(null, "Empréstimo não Liberado!");
-					}
-
-				} else if (parcelas >= 11 & parcelas <= 24) {
-					valorParcela = emprestimo / parcelas;
-					valorParcela = (((emprestimo * 0.2) + emprestimo) / parcelas);
+					valorParcela = (((emprestimo * 0.2) + emprestimo) / parcelas) * 0.2;
 					JOptionPane.showMessageDialog(null,
 							"O valor da percela a ser pago é de " + NumberFormat.getCurrencyInstance().format(valorParcela) + " em " + parcelas);
 					if (valorParcela < ((salario * 0.2) / salario)) {
 						JOptionPane.showMessageDialog(null, "O valor da percela a ser pago é de " + NumberFormat.getCurrencyInstance().format(valorParcela)
 								+ " em " + parcelas + " vezes sem juros!");
 						JOptionPane.showMessageDialog(null, "Empréstimo Liberado!");
-						
+					} else {
+						JOptionPane.showMessageDialog(null, "Empréstimo não Liberado!");
+					}
+
+				} else if (parcelas >= 11 & parcelas <= 24) {
+
+					valorParcela = emprestimo / parcelas;
+					valorParcela = (((emprestimo * 0.2) + emprestimo) / parcelas) * 0.2;
+					JOptionPane.showMessageDialog(null,
+							"O valor da percela a ser pago é de " + NumberFormat.getCurrencyInstance().format(valorParcela) + " em " + parcelas);
+					if (valorParcela < ((salario * 0.2) / salario)) {
+						JOptionPane.showMessageDialog(null, "O valor da percela a ser pago é de " + NumberFormat.getCurrencyInstance().format(valorParcela)
+								+ " em " + parcelas + " vezes sem juros!");
+						JOptionPane.showMessageDialog(null, "Empréstimo Liberado!");
 					} else {
 						JOptionPane.showMessageDialog(null, "Empréstimo não Liberado!");
 					}

@@ -195,6 +195,7 @@ public class Calcula {
 					}
 
 				} else if (parcelas >= 11 & parcelas <= 24) {
+
 					valorParcela = emprestimo / parcelas;
 					valorParcela = (((emprestimo * 0.2) + emprestimo) / parcelas);
 					JOptionPane.showMessageDialog(null,
