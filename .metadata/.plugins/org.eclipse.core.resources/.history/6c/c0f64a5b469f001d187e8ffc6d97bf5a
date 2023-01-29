@@ -1,0 +1,61 @@
+package calcula.emprestimo;
+
+import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
+
+public class Sistema {
+
+	public static void main(String[] args) {
+		
+		Pessoa funcionario;
+		Cliente cliente;
+		Emprestimo emprestimo;
+		
+		ArrayList<Emprestimo> emprestimos = new ArrayList<Emprestimo>();
+		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+		
+		String nomeFuncionario, senhaFuncionario = null;
+		int registroFuncionario,opcao;
+		
+		String nomeCliente;
+	    int docEmprestimo, dataEmprestimo, prazo;
+
+	    
+	    nomeFuncionario = JOptionPane.showInputDialog(null,"Digite o seu nome:");
+	    registroFuncionario = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o seu número de resgistro:"));
+	    JOptionPane.showInputDialog(null, "Digite a sua senha:");
+	    
+	    funcionario = new Funcionario(nomeFuncionario, "", 0, registroFuncionario, senhaFuncionario);
+
+		
+		opcao = 0;
+		
+		if(funcionario.validar() == true){
+			
+			JOptionPane.showInternalMessageDialog(null, funcionario.toString());
+			while (opcao != 6) {
+				opcao = Integer.parseInt(JOptionPane.showInputDialog( "---------- MENU ----------" 
+			                                                        + "\n 1 - Registre uma nova Ordem de emprestimo"
+			                                                        + "\n 2 - Adiciona valor do emprestimo"
+			                                                        + "\n 3 - Relatório de emprestimo concedidos"
+			                                                        + "\n 4 - Emprestimo Quitado"
+			                                                        + "\n 5 - Cadastro Clientes"
+			                                                        + "\n 6 - Sair"
+			                                                        ));
+				
+				switch(opcao) {
+				case 1:
+					docEmprestimo = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o número do documento:"));
+					nomeCliente = JOptionPane.showInputDialog(null, "Digite o nome do solicitante:");
+					dataEmprestimo = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a data da solicitação do emprestimo:"));
+					prazo = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a data Final do pagamento:"));
+					emprestimo = new Emprestimo(docEmprestimo, nomeCliente, dataEmprestimo, prazo);
+	                   emprestimos.add(emprestimo);
+	                    break;
+				}
+			}
+			
+		}
+	}   
+}

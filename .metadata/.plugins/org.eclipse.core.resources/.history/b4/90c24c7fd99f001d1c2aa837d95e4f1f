@@ -1,0 +1,40 @@
+package calcula.emprestimo;
+
+public class Pessoa {
+	
+	private String nome;
+	private String cpf;
+	private int dataNascimento;
+	
+	Pessoa(String nm, String cp, int data){
+		
+		nome = nm;
+		cpf = cp;
+		dataNascimento = data;
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getCpf() {
+		return cpf;
+	}
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+	public int getIdade() {
+		return dataNascimento ;
+	}
+	public void setIdade(int dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+
+	public boolean validar() {		
+		return false;
+	}
+	
+	
+}

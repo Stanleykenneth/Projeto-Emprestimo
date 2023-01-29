@@ -1,0 +1,102 @@
+package calcula.emprestimo;
+
+public class Emprestimo implements Imprimivel{
+
+	
+	private int numDocumento;
+	private int dataEmprestimo;
+	private int qtdEmprestimo;
+	private double valor;
+	private int prazo;
+
+	public Emprestimo(int numDoc, int dataEmp, int qtdEmp, double vl, int pz) {
+
+		
+		numDocumento = numDoc;
+		dataEmprestimo = dataEmp;
+		qtdEmprestimo = qtdEmp;
+		valor = vl;
+		prazo = pz;
+	}	
+
+	public Emprestimo(int docEmprestimo, String nomeCliente, int dataEmprestimo2, int prazo2) {
+		
+	}
+
+	public int getNumDocumento() {
+		return numDocumento;
+	}
+
+	public void setNumDocumento(int numDocumento) {
+		this.numDocumento = numDocumento;
+	}
+
+	public void setDataEmprestimo(int dataEmprestimo) {
+		this.dataEmprestimo = dataEmprestimo;
+	}
+
+	public int getDataEmprestimo() {
+		return dataEmprestimo;
+	}
+	
+	
+
+	public int getQtdEmprestimo() {
+		return qtdEmprestimo;
+	}
+
+	public void setQtdEmprestimo(int qtdEmprestimo) {
+		this.qtdEmprestimo = qtdEmprestimo;
+	}
+
+	public double getValor() {
+		return valor;
+	}
+
+	public void setValor(double valor) {
+		this.valor = valor;
+	}	
+	  
+    public int getPrazo() {
+		return prazo;
+	}
+
+	public void setPrazo(int prazo) {
+		this.prazo = prazo;
+	}
+	
+	  public boolean validarEmprestimo(int numDocumento) {
+	        boolean temEmprestimo;
+	        
+			if (getNumDocumento() !=getNumDocumento()){
+	        	temEmprestimo = false;
+	             return temEmprestimo;
+	        }
+	        
+	        else{
+	            temEmprestimo = true;
+	            return temEmprestimo;   
+	        }
+	                        
+	    }
+
+	public String toString() {
+        return  "\nEmprestimo:" + numDocumento +
+        		"\nData do emprestimo " + dataEmprestimo + 
+        		"\nValor do Emprestimo " + valor  + 
+        		"\nQuitação: " + prazo/10000 + "/" + prazo%10000/100 + "/20" + prazo%100  + NLIN;
+    }
+
+    public void somaEmprestimo(int pz) {
+        
+        this.qtdEmprestimo = getQtdEmprestimo() + pz;
+
+    }
+
+    public void subVacina(int pz) {
+        
+    	this.qtdEmprestimo = this.qtdEmprestimo - pz;
+
+    }
+
+}

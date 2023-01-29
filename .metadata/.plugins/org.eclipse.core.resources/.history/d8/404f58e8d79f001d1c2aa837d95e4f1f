@@ -1,0 +1,147 @@
+package calcula.emprestimo;
+
+import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
+
+public class Sistema {
+
+	public static void main(String[] args) {
+
+		Pessoa funcionario;
+		Cliente cliente;
+		Emprestimo emprestimo;
+
+		ArrayList<Emprestimo> emprestimos = new ArrayList<Emprestimo>();
+		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+
+		String nomeFuncionario, senhaFuncionario = null;
+		int registroFuncionario, opcao;
+
+		String nomeCliente, cpfCliente;
+		int docEmprestimo, dataEmprestimo, qtdEmprestimo, prazo, dataNascimentoCliente;
+
+		nomeFuncionario = JOptionPane.showInputDialog(null, "Digite o seu nome:");
+		registroFuncionario = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o seu número de resgistro:"));
+		JOptionPane.showInputDialog(null, "Digite a sua senha:");
+
+		funcionario = new Funcionario(nomeFuncionario, "", 0, registroFuncionario, senhaFuncionario);
+
+		opcao = 0;
+
+		if (funcionario.validar() == true) {
+
+			JOptionPane.showInternalMessageDialog(null, funcionario.toString());
+			while (opcao != 6) {
+				opcao = Integer.parseInt(JOptionPane
+						.showInputDialog("---------- MENU ----------" + "\n 1 - Registre uma nova Ordem de emprestimo"
+								+ "\n 2 - Adiciona valor do emprestimo" + "\n 3 - Relatório de emprestimo concedidos"
+								+ "\n 4 - Emprestimo Quitado" + "\n 5 - Cadastro Clientes" + "\n 6 - Sair"));
+
+				switch (opcao) {
+				case 1:
+
+					docEmprestimo = Integer
+							.parseInt(JOptionPane.showInputDialog(null, "Digite o número do documento:"));
+					nomeCliente = JOptionPane.showInputDialog(null, "Digite o nome do solicitante:");
+					dataEmprestimo = Integer
+							.parseInt(JOptionPane.showInputDialog(null, "Digite a data da solicitação do emprestimo:"));
+					prazo = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a data Final do pagamento:"));
+					emprestimo = new Emprestimo(docEmprestimo, nomeCliente, dataEmprestimo, prazo);
+					emprestimos.add(emprestimo);
+					break;
+
+				case 2:
+
+					/*
+					 * nomeCliente = JOptionPane.showInputDialog("Adicionar Emprestimo: " +
+					 * "\nDigite o nome do Cliente:"); for(int i = 0; i < emprestimos.size(); i++) {
+					 * if(emprestimos.get(i).getNumDocumento().equals(nomeCliente)){ qtdEmprestimo =
+					 * Integer.parseInt(JOptionPane.showInputDialog("Documento" + docEmprestimo +
+					 * " do  " + emprestimos.get(i).getNumDocumento() + "Encotrado!" ));
+					 */
+					break;
+
+				case 3:
+
+					String relatorio = "";
+					if (emprestimos.isEmpty()) {
+						JOptionPane.showMessageDialog(null, "Não existe emprestimo!"
+								+ " \nPara realizar novo emprestimo digite a opção 1 no MENU DE OPÇÕES!");
+
+					} else {
+						for (int i = 0; i < emprestimos.size(); i++) {
+							relatorio += emprestimos.get(i).toString();
+						}
+						JOptionPane.showMessageDialog(null, relatorio);
+					}
+					break;
+				
+				case 4:
+					docEmprestimo = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o número do Documento que deseja excluir:"));
+					for(int i = 0; i < emprestimos.size(); i++) {
+						Emprestimo qtdEmprestimo1 = emprestimos.get(i);
+						if(qtdEmprestimo1.getQtdEmprestimo() != qtdEmprestimo){
+							emprestimo.remove(qtdEmprestimo1, prazo);
+							JOptionPane.showMessageDialog(null, "Emprestimo removido com sucesso!");
+							break;
+						}else {
+							JOptionPane.showMessageDialog(null, "Emprestimo não encontrado para remoção, favor verificar");							
+						}						
+					}
+				break;
+				
+				  case 5:
+	                    int opcao1 = 0;
+
+	                    while (opcao1 != 4) {
+	                        opcao1 = Integer.parseInt(JOptionPane.showInputDialog(
+	                                "---------- CADASTRO CLIENTE ----------" + "\n 1 - Cadastro Cliente"
+	                                        + "\n 2 - Relatório de Emprestimos" + "\n 3 - Voltar ao MENU de OPÇÕES\n"));
+	                        switch (opcao1) {
+	                        case 1:
+	                            nomeCliente = JOptionPane.showInputDialog("Digite o nome do cliente: ");
+	                            cpfCliente = JOptionPane.showInputDialog("Digite o cpf do cleinte: ");
+	                            dataNascimentoCliente = Integer.parseInt(JOptionPane.showInputDialog("Digite a data de nascimento: "));
+	                            docEmprestimo = Integer.parseInt(JOptionPane.showInputDialog("Digite número do Emprestimo: "));
+	                            for (Emprestimo documento : emprestimos) {
+	                                if (documento.getQtdEmprestimo() != qtdEmprestimo) {
+	                                    qtdEmprestimo = Integer.parseInt(JOptionPane.showInputDialog("Emprestimo" + docEmprestimo
+	                                            + " encontrado!! \nDigite a quantidade de emprestimo: "));
+	                                    docEmprestimo.remove();
+;	                                    clientes = new Cleinte(nomeCliente, cpfCliente, dataNascimentoCliente, qtdEmprestimo. ;
+	                                    pacientes.add(paciente);
+	                                    JOptionPane.showMessageDialog(null, "Cliente cadastrado");
+
+	                                }
+
+	                            }
+
+	                            break;
+
+	                        case 2:
+	                            String relatorio1 = "";
+
+	                            for (Pessoa p : pacientes) {
+
+	                                relatorio1 += p.toString();
+
+	                            }
+
+	                            JOptionPane.showMessageDialog(null, relatorio1);
+
+	                            break;
+
+	                        }
+	                    }
+
+	                }
+	            }
+	            JOptionPane.showMessageDialog(null, "Obrigada por utilizar o nosso programa");
+
+				}
+			}
+		}
+	}
+
+}

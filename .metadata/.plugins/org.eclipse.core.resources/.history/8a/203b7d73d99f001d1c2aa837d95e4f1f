@@ -1,0 +1,30 @@
+package calcula.emprestimo;
+
+public class Cliente extends Pessoa{
+	
+	private int data;
+	private int numDocumento;
+	
+	Cliente(String nome, String cpf, int idade, int dt, int numDoc){
+		super(cpf, cpf, numDoc); 
+		data = dt;
+		numDocumento = numDoc;
+	}
+
+	public int getData() {
+		return data;
+	}
+
+	public void setData(int data) {
+		this.data = data;
+	}
+
+	public int getNumDocumento() {
+		return numDocumento;
+	}
+
+	public void setNumDocumento(int numDocumento) {
+		this.numDocumento = numDocumento;
+	}
+	
+}

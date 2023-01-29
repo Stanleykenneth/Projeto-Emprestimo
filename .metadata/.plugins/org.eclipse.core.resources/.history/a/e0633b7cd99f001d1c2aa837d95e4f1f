@@ -1,0 +1,5 @@
+package calcula.emprestimo;
+
+public interface Imprimivel {
+	final char NLIN = '\n';
+}

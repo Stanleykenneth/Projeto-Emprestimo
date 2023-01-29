@@ -1,0 +1,30 @@
+package calcula.emprestimo;
+
+import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
+
+public class Sistema {
+
+	public static void main(String[] args) {
+		
+		Pessoa funcionario;
+		Cliente cliente;
+		Emprestimo emprestimo;
+		
+		ArrayList<Emprestimo> emprestimos = new ArrayList<Emprestimo>();
+		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+		
+		String nomeFuncionario, senhaFuncionario;
+		int registroFuncionario,opcao;
+		
+		String nomecliente;
+	    int docEmprestimo, dataEmprestimo;
+
+	    
+	    nomeFuncionario = JOptionPane.showInputDialog(null,"Digite o seu nome:");
+	    registroFuncionario = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o seu número de resgistro:"));
+	    JOptionPane.showInputDialog(null, "Digite a sua senha:");
+	    funcionario = new Funcionario(nomeFuncionario, registroFuncionario, senhaFuncionario);
+	}   
+}

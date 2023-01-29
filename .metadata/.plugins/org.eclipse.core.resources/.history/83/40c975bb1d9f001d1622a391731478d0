@@ -1,0 +1,31 @@
+package calcula.emprestimo;
+
+public class Funcionario extends Pessoa {
+
+	private int registro;
+	private String senha;
+	
+	Funcionario(String nome, String cpf, int data, int r, String s){
+		super();
+		registro = r;
+		senha = s;
+	}
+
+	public int getRegistro() {
+		return registro;
+	}
+
+	public void setRegistro(int registro) {
+		this.registro = registro;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+	
+	
+}

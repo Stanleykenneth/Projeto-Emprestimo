@@ -1,0 +1,8 @@
+package calcula.emprestimo;
+
+public  abstract class Cliente {
+	
+	private int data;
+	private int doc	
+	
+}

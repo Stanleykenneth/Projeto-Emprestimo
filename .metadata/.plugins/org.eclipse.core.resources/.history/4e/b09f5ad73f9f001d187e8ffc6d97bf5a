@@ -1,0 +1,59 @@
+package calcula.emprestimo;
+
+public class Emprestimo {
+
+	private String nomeCliente;
+	private String cpfCliente;
+	private int numDocumento;
+	private int dataEmprestimo;
+	private double valor;
+
+	public Emprestimo(String nomeCli, String cpfCli, int dataEmp, int numDoc, double vl) {
+
+		nomeCliente = nomeCli;
+		cpfCliente = cpfCli;
+		numDocumento = numDoc;
+		dataEmprestimo = dataEmp;
+		valor = vl;
+	}
+
+	public String getNomeCliente() {
+		return nomeCliente;
+	}
+
+	public void setNomeCliente(String nomeCliente) {
+		this.nomeCliente = nomeCliente;
+	}
+
+	public String getCpfCliente() {
+		return cpfCliente;
+	}
+
+	public void setCpfCliente(String cpfCliente) {
+		this.cpfCliente = cpfCliente;
+	}
+
+	public int getNumDocumento() {
+		return numDocumento;
+	}
+
+	public void setNumDocumento(int numDocumento) {
+		this.numDocumento = numDocumento;
+	}
+
+	public void setDataEmprestimo(int dataEmprestimo) {
+		this.dataEmprestimo = dataEmprestimo;
+	}
+
+	public int getDataEmprestimo() {
+		return dataEmprestimo;
+	}
+
+	public double getValor() {
+		return valor;
+	}
+
+	public void setValor(double valor) {
+		this.valor = valor;
+	}
+}

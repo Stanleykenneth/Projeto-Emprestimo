@@ -11,19 +11,21 @@ public class Teste extends Moeda {
 
 	public static void main(String[] args) {
 	 
-		Moeda salario = new Moeda("100000");
-		//salario.subtrair("60.00");
-		//salario.somarCom("300.00");
-		//salario.multiplicar("0.10");
-		//salario.dividir(new BigDecimal("1.3"));
-		System.out.println(salario.valorFormatado());
+	/*	Moeda salario = new Moeda("100000");
+		salario.subtrair("60.00");
+		salario.somarCom("300.00");
+		salario.multiplicar("0.10");
+		salario.dividir(new BigDecimal("1.3"));
+		System.out.println(salario.valorFormatado());*/
 		
-		double numero = 10;
+		double salario = 3000;
+		double pretacão;
 		
-		numero = numero * 0.02;
+		 
+		salario = salario * 0.2;
+		System.out.println(salario);
 		
-		System.out.println(numero);
-		
+	
 	}
 
 }

@@ -1,0 +1,25 @@
+package calcula.emprestimo;
+
+import java.util.ArrayList;
+
+public class Sistema {
+
+	public static void main(String[] args) {
+		
+		Pessoa funcionario;
+		Cliente cliente;
+		Emprestimo emprestimo;
+		
+		ArrayList<Emprestimo> emprestimos = new ArrayList<Emprestimo>();
+		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+		
+		String nomeFuncionario, senhaFuncionario;
+		int registroFuncionario,opcao;
+		
+		 String nomecliente, fabricanteVacina, loteVacina;
+	        int qtdVacina, validadeVacina;
+
+	        String nomePaciente, cpfPaciente;
+	        int dataNascimentoPaciente, qtdDose;
+	}
+}
