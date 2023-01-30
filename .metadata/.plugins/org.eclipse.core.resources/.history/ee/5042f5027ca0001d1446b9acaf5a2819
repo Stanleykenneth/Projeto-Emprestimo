@@ -28,7 +28,7 @@ public class Calcula {
 		while (opcao != 4) {
 
 			opcao = Integer.parseInt(JOptionPane.showInputDialog(null,
-					" ---------- MENU ---------  "
+					" <---------- MENU --------->  "
 			      + "\n[1] - Digite o valor desejado "
 			      + "\n[2] - Parcelas sem juros "
 			      + "\n[3] - Parcelas com juros "
